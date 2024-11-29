@@ -1,0 +1,79 @@
+/*-------body tag css--------*/
+html{
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    background-image: url(img/handong_main1.jpg);
+    background-attachment: fixed;
+    background-size: 100%;  
+}
+
+/*-------header tag css--------*/
+header {
+    margin: 0;
+    width: 100%;
+    height: 15%;
+    background-color: rgba(60, 170, 239, 0.5) ;
+    text-align: center;
+    justify-content: center;
+}
+
+header > div {
+    display: inline-block;
+}
+
+header > div> h1 {
+    font-size: 40px;
+    font-weight: 800; /* 더 굵은 값으로 설정 *//
+}
+
+/*-------section--------*/
+
+section {
+    display: flex;
+    justify-content: center; /* Centers the divs horizontally */
+    align-items: center;     /* Centers the divs vertically */
+    flex-wrap: wrap;         /* Allows multiple lines if divs overflow */
+    width: 100%;
+    height: 85%;
+    background-color: rgba(255, 255, 255, 0.4);    
+    margin: auto;
+}
+
+section > div {
+    text-align: center;
+    padding-top: 4.5%;
+    width: 15%;
+    height: 30%;
+    border-radius: 20px;
+    margin: 5%; /* Adjusted to prevent overflow */
+    background-color: rgba(128, 128, 128, 0.7);
+    font-size: 30px;
+    box-sizing: border-box;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+section > div:hover {
+    background-color: rgba(128, 128, 128, 0.9); /* 더 진한 배경색 */
+    transform: scale(1.1); /* 크기 확대 */
+}
+
+/*------- a tag css --------*/
+a {
+    color:black;
+    text-decoration: none;
+    font-weight: normal; 
+    transition: color 0.3s, font-weight 0.3s;
+}
+
+a:visited {
+    color:black;
+    text-decoration: none;
+}
+
+section > div:hover a {
+    font-weight: bold; 
+    color: #333; 
+}
