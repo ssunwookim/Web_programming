@@ -1,40 +1,217 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-    
-    <meta charset=UTF-8 />
-    <link rel="stylesheet" type="text/css" href="style_main.css" />
-    <title> web programing final project main hompage </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Match Game</title>
 
+    <style>
+        header {
+            margin: 0;
+            width: 100%;
+            height: 15%;
+            background-color: rgba(60, 170, 239, 0.5) ;
+            text-align: center;
+            justify-content: center;
+        }
+
+        header > div {
+            display: inline-block;
+        }
+
+        header > div> h1 {
+            font-size: 40px;
+            font-weight: 800; /* 더 굵은 값으로 설정 *//
+        }
+        body {
+            text-align: center;
+            min-height: 100vh;
+        }
+        #div_block {
+            display: inline-flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+            width: 100%;
+            gap: 25px;
+        }
+        .boxes {
+            height: 280px;
+            width: 240px;
+            border: 1px solid;
+            background-size: cover;
+            background-position: center;
+            background-color: #ccc; /* Default hidden state */
+            cursor: pointer;
+        }
+        .revealed {
+            background-color: transparent;
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+        function start(){
+            let today = new Date();
+            let hours = today.getHours();
+                    
+            if(hours >= 6 && hours < 18) {
+                document.body.style.backgroundColor = 'white';
+                document.body.style.color = 'black';
+                document.querySelector('#night_day').value = 'Night Mode';
+            } else {
+                document.body.style.backgroundColor = 'black';
+                document.body.style.color= 'white';
+                document.querySelector('#night_day').value = 'Day Mode';
+            }
+        } 
+        function balckWhite(){
+            document.getElementsByNamee
+            if(document.querySelector('#night_day').value === 'Night Mode'){ 
+                document.querySelector('body').style.backgroundColor = 'black';
+                document.querySelector('body').style.color = 'white';
+                document.querySelector('#night_day').value = 'Day Mode';
+            } else { 
+                document.querySelector('body').style.backgroundColor = 'white';
+                document.querySelector('body').style.color = 'black';
+                document.querySelector('#night_day').value = 'Night Mode';
+            }
+        }
+
+        const imagePaths = [
+            'img/bibimbap.jpg',
+            'img/Food_image.png',
+            'img/gimbab.jpg',
+            'img/icecream.png',
+            'img/kimchisoup.jpg',
+        ]; // Only 5 unique images for 10 cards
+
+        let shuffledImages = []; // Stores shuffled images
+        let firstSelection = null; // Track first clicked box
+        let secondSelection = null; // Track second clicked box
+        let isFlipping = false; // Prevent interaction during flipping phase
+
+        // Shuffle and duplicate images
+        function shuffleImages() {
+            const duplicatedImages = [...imagePaths, ...imagePaths];
+            shuffledImages = duplicatedImages.sort(() => Math.random() - 0.5);
+        }
+
+        // Create divs for the game board
+        function makeDiv() {
+            shuffleImages();
+            let result = '';
+            for (let i = 0; i < shuffledImages.length; i++) {
+                result += `<div id='box${i}' class='boxes'></div>`;
+            }
+            document.getElementById('div_block').innerHTML = result;
+        }
+
+        // Show all images when the button is pressed
+        function revealAllImages() {
+            for (let i = 0; i < shuffledImages.length; i++) {
+                const box = document.getElementById(`box${i}`);
+                box.style.backgroundImage = `url('${shuffledImages[i]}')`;
+                box.classList.add('revealed');
+            }
+
+            // Flip back the images after 5 seconds
+            setTimeout(hideAllImages, 5000);
+        }
+
+        // Hide all images
+        function hideAllImages() {
+            for (let i = 0; i < shuffledImages.length; i++) {
+                const box = document.getElementById(`box${i}`);
+                box.style.backgroundImage = '';
+                box.classList.remove('revealed');
+                box.setAttribute('onclick', `revealImage(${i})`); // Enable click functionality
+            }
+            isFlipping = false; // Allow clicks after flipping
+        }
+
+        // Reveal image on click
+        function revealImage(index) {
+            if (isFlipping) return; // Prevent interaction during flipping phase
+            const box = document.getElementById(`box${index}`);
+
+            // Ignore clicks on already revealed boxes
+            if (box.classList.contains('revealed') || secondSelection) return;
+
+            // Reveal the image
+            box.style.backgroundImage = `url('${shuffledImages[index]}')`;
+            box.classList.add('revealed');
+
+            // Track selections
+            if (!firstSelection) {
+                firstSelection = { index, element: box, image: shuffledImages[index] };
+            } else {
+                secondSelection = { index, element: box, image: shuffledImages[index] };
+
+                // Check if the images match
+                isFlipping = true; // Temporarily disable further clicks
+                setTimeout(checkMatch, 1000);
+            }
+        }
+
+        // Check if two selected images match
+        function checkMatch() {
+            if (firstSelection.image === secondSelection.image) {
+                // Match found: redirect to the next page
+                window.location.href = "major_page.html";
+            } else {
+                // No match: flip back
+                firstSelection.element.style.backgroundImage = '';
+                secondSelection.element.style.backgroundImage = '';
+                firstSelection.element.classList.remove('revealed');
+                secondSelection.element.classList.remove('revealed');
+            }
+
+            // Reset selections
+            firstSelection = null;
+            secondSelection = null;
+            isFlipping = false; // Allow clicks again
+        }
+
+        // Reset the game
+        function reset() {
+            firstSelection = null;
+            secondSelection = null;
+            isFlipping = false;
+            makeDiv();
+        }
+    </script>
 </head>
 
-<body > 
-    
+<body onload="makeDiv()">
+
     <header>
 
         <div>
-            <img src="img/logo.png" alt="사진 없음" height="60px" width="60px"> 
+            <img src="../../img/logo.png" alt="사진 없음">
         </div>    
-
-        <div id="openMenu">
-
-            <h1> <a href="../main_page.html"> 한동대학교 </a></h1>
-
-        </div>
-
-    </header>   
+        
+        <div>
+            <h1> <a href="../../main_page.html"> WELCOME </a> </h1>
+        <div>
+    
+    </header>
 
     <section>
+    <input id="night_day" type="button" value="Night Mode" onclick="balckWhite();"></input>
 
-        <div> <a  href="Campus/campus_page.html">   캠퍼스 소개 </a> </div>
-        <div> <a  href="Culture/newmainculture.html"> 한동 문화   </a> </div>
-        <div> <a  href="major/major_page.html">     전공 소개   </a> </div>
+    <div> 
+        <p> 문화 페이지로 이동하고 싶으면 문화 사진 고르세요. 전공 페이지로 이동하고 싶으면 전공 사진을 고르세요.</p>
+    </div>
+
+    <div>
+        <button onclick="revealAllImages()">Show Images</button>
+        <button onclick="reset()">Restart</button>
+        
+    </div>
+
+    <div id="div_block"></div>
 
     </section>
-
-
 </body>
-
 </html>
