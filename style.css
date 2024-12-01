@@ -9,8 +9,6 @@ header {
 
 header > div {
     display: inline-block;
-    width: 5%;
-    height: 15%;
 }
 
 header > div > img {
