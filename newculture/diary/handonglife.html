@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/handonglife.css">
+    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <title>1월 8일</title>
+</head>
+
+<body class="grid-background">
+    <button onclick="goBack()" class="back-button">뒤로 가기</button>
+        <script>
+            function goBack() {
+                window.location.href = "../newculture/newmainculture.html"; // 필요한 경로로 수정하세요.
+            }
+
+            function balckWhite() {
+                const body = document.querySelector('body');
+                if (document.querySelector('#night_day').value === 'Night Mode') {
+                    body.style.backgroundColor = 'black';
+                    document.querySelector('#night_day').value = 'Day Mode';
+                    document.querySelector('h1').style.color = 'white';
+
+                    // Night mode 스타일 추가
+                    body.classList.add('night-mode');
+                } else {
+                    // Day 모드 스타일 설정
+                    body.style.background = `
+                        linear-gradient(to bottom, transparent 38px, rgb(210, 105, 30) 38px) 0 0 / 100vw 40px repeat-y,
+                        linear-gradient(to right, transparent 38px, chocolate 38px) 0 0 / 40px 100vh repeat-x,
+                        blanchedalmond
+                    `;
+                    document.querySelector('#night_day').value = 'Night Mode';
+                    document.querySelector('h1').style.color = 'black';
+
+                    // Night mode 클래스 제거
+                    body.classList.remove('night-mode');
+                }
+            }
+        </script>
+    <!-- 헤더: 제목, 날짜, 날씨 -->
+    <header class="diary-header">
+        <h1>바베큐치킨덮밥</h1>
+        <div class="diary-meta">
+            <span class="date">11월 18일</span> |
+            <span class="weather">완전 맑음 ☀️</span>
+        </div>
+    </header>
+
+    <nav>
+        <input id="night_day" type="button" value="Night Mode" onclick="balckWhite();"></input>
+    </nav>
+
+    <hr>
+    <audio controls>
+        <source src="../music/MP_달콤한 휴식 시간.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- 본문 -->
+    <div class="diary-content">
+        <div style="float: left; width: 45%; margin-right: 5%;">
+            <img src="../img_culture/bobgo.jpg" alt="사진" style="width:100%; height:auto;">
+        </div>
+
+        <p>나는 오늘 1교시부터 수업이 있었다.ㅠㅠ 이게 말이야 방구야!! 사는겸 열심히 살다보니 점심시간이 되었다!! 밥먹을 힘은 없었지만 <span>밥고</span>였기 때문에 친구와 학관에서 따스한동에서 바베큐치킨덮밥을 먹었다.
+            바베큐치킨덮밥은 나의 최애메뉴이다!!!</p>
+
+        <p>밥을먹고 나니 너무 배가 불러 잠이 왔다.. 잠이 오면 오늘까지 제출해야 하는 과제를 완성 못하기 때문에 밥고 친구와 함께 한한을 했다!! 역시 한한 한바퀴면 잠이 깰 줄 알았는데 잠에 들고 말았다 …
+            자고 일어나니 11시 10분!!! 49분 안에 과제를 완성해야 한다. 과제를 어찌저찌 완성하니 11시 57분이여서 늦지 않게 과제를 제출했다 ㅎㅎ 역시 나다!!! 오늘 하루도 완전히 완벽한 하루였다.
+            헤헷!! 역시 나는 최고이다 오늘도 완벽한 하루이다!!</p>
+
+        <div style="clear: both;">
+          
+        </div>
+    </div>
+
+    <hr>
+    <footer class="diary-footer">
+        2024 내 일기장
+    </footer>
+</body>
+
+</html>
