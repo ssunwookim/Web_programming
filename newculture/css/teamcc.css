@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&family=Nanum+Pen+Script&display=swap');
+
+body {
+    font-family: 'Nanum Pen Script', 'Dancing Script', sans-serif;
+    background-color: #ffdafe; 
+    margin: 0;
+    padding: 0;
+}
+
+.diary {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff; /* 흰색 박스 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+    color: #f78cf5;
+    font-family: 'Dancing Script', cursive;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.entry {
+    margin: 20px 0;
+    display: flex;
+    align-items: flex-start;
+}
+
+.entry img {
+    width: 30%;
+    height: auto;
+    border-radius: 10px;
+    margin: 0 20px;
+}
+
+.left-img {
+    order: -1; /* 이미지가 왼쪽으로 */
+}
+
+.right-img {
+    order: 1; /* 이미지가 오른쪽으로 */
+}
+
+p {
+    flex: 1;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #333333;
+    font-family: 'Nanum Pen Script', cursive;
+}
+
+audio {
+    display: block;
+    margin: 20px auto;
+}
+
+.back-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    background-color: #e9ecef;
+}

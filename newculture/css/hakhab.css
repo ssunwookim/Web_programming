@@ -1,0 +1,149 @@
+/* 전체 페이지 스타일 */
+body {
+    font-family: 'Comic Sans MS', 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #00c6ff, #0072ff); /* 화려한 그라데이션 배경 */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.8;
+    overflow-x: hidden; /* 가로 스크롤 방지 */
+}
+
+/* 컨테이너 스타일 */
+.container {
+    width: 85%;
+    margin: 30px auto;
+    background: rgba(255, 255, 255, 0.95); /* 약간 투명한 흰색 */
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* 진한 그림자 */
+    border: 5px solid #28a745; /* 초록색 테두리 */
+    animation: fadeIn 1.5s ease-in-out; /* 페이드 인 효과 */
+    position: relative;
+}
+
+/* 제목 스타일 */
+h1 {
+    text-align: center;
+    color: #ff4500; /* 강렬한 오렌지 */
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-shadow: 4px 4px 8px rgba(255, 69, 0, 0.5); /* 빛나는 효과 */
+    animation: glow 2s infinite; /* 빛나는 애니메이션 */
+}
+
+/* 본문 텍스트 스타일 */
+p {
+    font-size: 1.3em;
+    margin: 20px 0;
+    text-align: justify;
+    color: #222;
+}
+
+/* 키워드 강조 */
+span {
+    color: #ff1493; /* 핑크빛 강렬한 색상 */
+    font-weight: bold;
+    background-color: #fff0f5; /* 연핑크 배경 */
+    padding: 5px 10px;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer; /* 손 모양 커서 */
+    transition: transform 0.3s ease;
+}
+
+/* 학합 툴팁 스타일 */
+span:hover::after {
+    content: '학부합창대회는 연말에 열리는 연례행사로 매년 정해지는 주제에 맞춰서 학부당 10분에서 15분 내의 합창을 준비하여 대회를 하는 행사이다.';
+    position: absolute;
+    top: 130%; /* 툴팁이 텍스트 아래 나타남 */
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    white-space: normal; /* 여러 줄로 나타남 */
+    line-height: 1.5;
+    width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 10;
+}
+
+/* 툴팁 활성화 */
+span:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 이미지 스타일 */
+img {
+    display: block;
+    margin: 20px auto;
+    max-width: 90%;
+    height: auto;
+    border: 8px solid #ffd700; /* 금빛 테두리 */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* 강한 그림자 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.1) rotate(3deg); /* 확대 및 회전 효과 */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* 하단 스타일 */
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 1.2em;
+    color: #fff;
+    background: linear-gradient(to right, #ff7f50, #ff4500);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+    font-style: italic;
+    animation: fadeIn 2s ease-in-out;
+}
+
+
+/* 애니메이션 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 4px 4px 8px rgba(255, 69, 0, 0.5), 0 0 15px rgba(255, 69, 0, 0.7);
+    }
+    50% {
+        text-shadow: 4px 4px 12px rgba(255, 69, 0, 0.7), 0 0 25px rgba(255, 69, 0, 1);
+    }
+}
+
+.back-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    background-color: #e9ecef;
+}

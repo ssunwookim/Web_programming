@@ -1,0 +1,138 @@
+:root {
+    background-color: #eee}
+
+.grid-background{
+	font-family: "Edu AU VIC WA NT Pre", cursive;
+	height:100%;
+    background:
+		linear-gradient(to bottom, transparent 38px, rgb(210, 105, 30) 38px) 0 0 / 100vw 40px repeat-y,
+		linear-gradient(to right, transparent 38px, chocolate 38px) 0 0 / 40px 100vh repeat-x
+	    blanchedalmond;
+}
+h1{
+	text-align:center;
+	text-decoration: underline;
+	font-size: 40px;
+	margin-top: 100px;
+}
+div{
+	margin:auto; 
+	text-align: center;
+	padding:10px;
+	font-weight: bold;
+}
+html, body{
+	height: 100%;
+	margin:0;
+	padding:0;
+}
+body {
+	font-family: 'Poppins', sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f9f7f6;
+	color: #333;
+}
+
+.grid-background {
+	padding: 20px;
+}
+
+.diary-header {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.diary-header h1 {
+	font-size: 2em;
+	margin-bottom: 10px;
+}
+
+.diary-meta {
+	text-align: center;
+	font-size: 1.2em;
+	margin-bottom: 20px;
+}
+
+.diary-content {
+	padding: 20px;
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.diary-content img {
+	border-radius: 10px;
+}
+
+.date {
+	font-weight: bold;
+}
+
+.weather {
+	font-style: italic;
+	color: #666;
+}
+
+.diary-footer {
+	text-align: center;
+	margin-top: 20px;
+	font-size: 0.9em;
+	color: #888;
+}
+span{
+	color:red;
+}
+
+.back-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    background-color: #e9ecef;
+}
+
+/* Variables for Day Mode */
+:root {
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --border-color: #000000;
+}
+
+body.night-mode {
+    --background-color: #000000;
+    --text-color: #ffffff;
+    --border-color: #ffffff;
+}
+
+nav {
+    text-align: left; /* Align content to the left */
+    padding: 10px 20px; /* Add some spacing around the nav */
+}
+
+#night_day {
+    background: linear-gradient(90deg, #8e44ad, #3498db); /* Purple-to-Blue gradient */
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+}
+
+#night_day:hover {
+    background: linear-gradient(90deg, #3498db, #8e44ad); /* Reversed gradient on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
