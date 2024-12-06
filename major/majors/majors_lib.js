@@ -13,17 +13,47 @@ function start(){
         document.querySelector('#night_day').value = 'Day Mode';
     }
 } 
-function balckWhite(){
-    document.getElementsByNamee
-    if(document.querySelector('#night_day').value === 'Night Mode'){ 
-        document.querySelector('body').style.backgroundColor = 'black';
-        document.querySelector('body').style.color = 'white';
-        document.querySelector('#night_day').value = 'Day Mode';
-    } else { 
-        document.querySelector('body').style.backgroundColor = 'white';
-        document.querySelector('body').style.color = 'black';
-        document.querySelector('#night_day').value = 'Night Mode';
+function balckWhite() {
+    const body = document.querySelector('body');
+    const button = document.querySelector('#night_day');
+    const spinButton = document.querySelector('#spin-btn');
+    const resultText = document.querySelector('#result');
+
+    if (button.value === 'Night Mode') {
+        body.style.backgroundColor = 'black';
+        body.style.color = 'white';
+        button.value = 'Day Mode';
+
+        // Add night-mode class for dynamic styling
+        body.classList.add('night-mode');
+
+        // Update button and result text styles for night mode
+        spinButton.style.backgroundColor = 'white'; // White button background
+        spinButton.style.color = 'black'; // Black text on the button
+        resultText.style.color = 'white'; // White result text
+    } else {
+        body.style.backgroundColor = 'white';
+        body.style.color = 'black';
+        button.value = 'Night Mode';
+
+        // Remove night-mode class for day styling
+        body.classList.remove('night-mode');
+
+        // Update button and result text styles for day mode
+        spinButton.style.backgroundColor = '#333'; // Default button background
+        spinButton.style.color = 'white'; // Default text color
+        resultText.style.color = 'black'; // Default result text color
     }
+}
+
+function toggleMenu() {
+    const sideMenu = document.querySelector('.side-menu');
+    sideMenu.classList.toggle('active');
+}
+
+function closeMenu() {
+    const sideMenu = document.querySelector('.side-menu');
+    sideMenu.classList.remove('active');
 }
 
 function toggleContent(contentId) {
