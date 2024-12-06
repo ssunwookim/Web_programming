@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html>
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    
+    <meta charset=UTF-8 />
+    <link rel="stylesheet" type="text/css" href="../majors/style_majors.css" />
+    <script src="../majors/majors_lib.js"></script>
+    <title> web programing final project main hompage </title>
+
+</head>
+
+<body > 
+    
+    <header>  
+        
+        <div class="menu-container">
+            <div class="menu-icon" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+
+        <div class="header-center">
+            <h1><a href="../../index.html">오늘부터 한동인</a></h1>
+        </div>
+
+    </header>
+
+    <div class="side-menu" onmouseleave="closeMenu()">
+        <a href="../../newculture/newculture/newmainculture.html">한동 문화</a>
+        <a href="../major_page.html">전공 소개</a>
+    </div>
+    
+    </header>
+
+    <nav>
+        <input id="night_day" type="button" value="Night Mode" onclick="balckWhite();"></input>
+    </nav>
+    
+    <section>
+        <div class="intro">
+            <h1> 창의융합 교육원</h1>
+            <p>"합력하여 선을 이루는 창의융합"</p>
+            <p>전공 : 학생설계융합 전공 / 글로벌융합 전공 / 글로벌한국학 전공 / 수학통계 전공/ TEP(Teacher Education Program) / GPS프로그램 / 전인적세계시민특화프로그램 / 통일한국특화프로그램
+            </p>
+            <h2> 학생설계융합 전공</h2>
+            <p>학생설계융합전공은 기존에 제공하고 있는 전공의 틀을 뛰어넘는 창의적인 전공기회를 제공 하며, 기존 전공으로는 발휘할 수 없었던 학생 재능 발휘의 장을 제공하고자 합니다.학생설계융합전공은 학생 개별의 적성과 잠재력을 발견하고 창의적인 전공으로 연계하도록 유도하여 창조적 지성을 갖춘 인재를 양성하는 것이 목표입니다. 
+            </p>
+        </div>
+
+        <div class="container">
+        
+            <button class="toggle-btn" onclick="toggleContent('content1', this)">교과 과정
+                <img src="arrow.png">
+            </button>
+            <div class="content" id="content1">
+                <img src="img_majors/chart/ifc_13_1.png" class="chart">
+
+            </div>
+        
+        </div>
+
+        <div class="intro">
+            <h2> 글로벌융합 전공 </h2>
+            <p>글로벌융합전공은 학생 스스로가 100% 영어강의로 전공설계를 주도하고, 공부하 여 창의적 전문가로 성장하는 것을 목표로 합니다.특히, 외국인 학생 및 재외 학생들이 좀 더 쉽도록 1:1 형식으로 커리큘럼을 구성하는 것이 가장 큰 강점입니다.
+            </p>
+        </div>
+        
+        <div class="container">
+
+            <button class="toggle-btn" onclick="toggleContent('content2', this)">교과과정
+                <img src="arrow.png">
+            </button>
+            <div class="content" id="content2">
+                <img src="img_majors/chart/ifc_13_2.png" class="chart">
+            </div>
+        </div>
+
+        <div class="intro">
+            <h2> 글로벌한국학 전공  </h2>
+            <p>글로벌한국학 전공은 한동대학교의 국제화 전략의 하나로, 한국학의 세계화를 위해 글로벌 역량과 다학제 융합적 역량을 갖춘 내국인 및 외국인 인재를 양성하는 것을 목표로 합니다. 
+            </p>
+        </div>
+        
+        <div class="container">
+
+            <button class="toggle-btn" onclick="toggleContent('content3', this)">교과과정
+                <img src="arrow.png">
+            </button>
+            <div class="content" id="content3">
+                <img src="img_majors/chart/ifc_13_3.png" class="chart">
+            </div>
+        </div>
+
+        <div class="intro">
+            <h2> 수학통계 전공</h2>
+            <p>  창조성이 강조되는 21 세기에 수학적 통찰과 방법론으로 교육받은 인재는 어떤 분야에서 일하든지 가장 창 의적이고 혁신적으로 분야를 개척할 수 있습니다. 통계학 전공을 통해 자신의 전문분야에서 탁월한 분석력과 통찰을 발휘할 수 있는 인재로 성장할 수 있을 것입니다.  
+            </p>
+        </div>
+        
+        <div class="container">
+
+            <button class="toggle-btn" onclick="toggleContent('content4', this)">교과과정
+                <img src="arrow.png">
+            </button>
+            <div class="content" id="content4">
+                <img src="img_majors/chart/ifc_13_4.png" class="chart">
+            </div>
+        </div>
+
+        <div class="intro">
+            <h2> TEP(Teacher Education Program) </h2>
+            <p>  TEP 기독교사 특화 프로그램은 기독교 대안학교와 해외 선교지 학교를 비롯한 다양한 교육현장에서 참 교육의 회복과 변혁을 주도하는 기독교사와 교육전문가 양성을 목표로 하는 창의융합교육원 내 특화 트랙입니다. TEP에서는 기독교적 세계관을 기반으로 한 교육적 지식을 함양하도록 할 뿐 아니라 교육에서의 소명 확인, 교육의 회복과 변혁을 추구하는 태도와 인성을 갖추도록 합니다.
+            </p>
+        </div>
+        
+        <div class="container">
+
+            <button class="toggle-btn" onclick="toggleContent('content5', this)">교과과정
+                <img src="arrow.png">
+            </button>
+            <div class="content" id="content5">
+                <img src="img_majors/chart/ifc_13_5.png" class="chart">
+            </div>
+        </div>
+
+        <div class="intro">
+            <h2> GPS프로그램 / 전인적세계시민특화프로그램 </h2>
+            <p>  GPS 프로그램은 기독교정신과 기업가정신을 결합하여 글로벌 문제를 해결할 차세대 세계지도자인 GPS(Global Problem Solver)를 양성하는 교육프로그램입니다. 전인적 세계시민 특화프로그램은(HGCP) 국제사회에서 우리 인류가 함께 해결 해야 하는 글로벌 과제인 지속가능발전목표(SDGs) 를 달성하기 위한 세계시민 교육을 제공하는 세계 최초의 프로그램입니다.  
+            </p>
+        </div>
+        
+        <div class="container">
+
+            <button class="toggle-btn" onclick="toggleContent('content6', this)">교과과정
+                <img src="arrow.png">
+            </button>
+            <div class="content" id="content6">
+                <img src="img_majors/chart/ifc_13_6.png" class="chart">
+            </div>
+        </div>
+
+        <div class="intro">
+            <h2> 통일한국특화프로그램</h2>
+            <p>통일한국특화프로그램은 통일 교육을 통하여 통일과 북한에 대한 시대적인 사명을 지니고 통일 시민으로 준비시켜 통일 이후의 북한 개발과 남북한 사회통합 등을 이루 어낼 통일 인재를 양성하고자 하는 창의융합교육원 내 특화 트랙입니다.   
+            </p>
+        </div>
+        
+        <div class="container">
+
+            <button class="toggle-btn" onclick="toggleContent('content7', this)">교과과정
+                <img src="arrow.png">
+            </button>
+            <div class="content" id="content7">
+                <img src="img_majors/chart/ifc_13_7.png" class="chart">
+            </div>
+        </div>
+
+        <div class="intro">
+            <h3> 교수진 </h3>
+            <img src="img_majors/prof/prof_13.png" id="prof"> 
+            <p>
+                이름 : 가요한 <br>
+                전공 : Vanderbilt University 종교와 심리학 Ph.D.<br>
+                연구실 : 현동홀 328A호<br>
+                전화 : 054-260-1458<br>
+                이메일 : yka@handong.edu <br>
+
+            </p>
+            
+            
+        </div>
+
+    </section>
+
+
+</body>
+
+</html>

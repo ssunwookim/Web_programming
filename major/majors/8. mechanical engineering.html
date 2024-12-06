@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html>
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    
+    <meta charset=UTF-8 />
+    <link rel="stylesheet" type="text/css" href="../majors/style_majors.css" />
+    <script src="../majors/majors_lib.js"></script>
+    <title> web programing final project main hompage </title>
+
+</head>
+
+<body > 
+    <header>  
+        
+        <div class="menu-container">
+            <div class="menu-icon" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+
+        <div class="header-center">
+            <h1><a href="../../index.html">오늘부터 한동인</a></h1>
+        </div>
+
+    </header>
+
+    <div class="side-menu" onmouseleave="closeMenu()">
+        <a href="../../newculture/newculture/newmainculture.html">한동 문화</a>
+        <a href="../major_page.html">전공 소개</a>
+    </div>
+    
+    </header>
+
+    <nav>
+        <input id="night_day" type="button" value="Night Mode" onclick="balckWhite();"></input>
+    </nav>
+    
+    <section>
+        <div class="intro">
+            <h1> 기계제어 공학부  </h1>
+            <p>“생각대로 움직인다, 낭만기계”</p>
+            <p>전공 : 기계공학 전공, 전자제어공학 전공</p>
+            <h2> 기계공학 전공</h2>
+            <p>기계공학 전공은 다양한 기계장치의 설계와 구조, 재료의 역학적 특성을 다루며, 물리적 원리를 기반으로 문제를 해결하는 학문입니다. 주요 기초 분야로는 재료의 강도와 변형을 연구하는 재료역학, 운동과 진동을 분석하는 기계역학, 기계 부품의 상호운동을 다루는 기구학이 포함됩니다. 또한, 열과 유체의 특성을 연구하는 열·유체역학과 에너지 전달을 다루는 열전달을 학습합니다. 이를 통해 기계 설계와 제작, 에너지 시스템 등 다양한 산업 분야에서 활동할 수 있는 전문성을 갖춘 인재를 양성합니다.
+            </p>
+        </div>
+
+        <div class="container">
+        
+            <button class="toggle-btn" onclick="toggleContent('content1', this)">교과 과정
+                <img src="arrow.png">
+            </button>
+            <div class="content" id="content1">
+                <img src="img_majors/chart/m.e.png" class="chart">
+
+            </div>
+        
+            <button class="toggle-btn" onclick="toggleContent('content2', this)">졸업 필수과목
+                <img src="arrow.png">
+            </button>
+            <div class="content" id="content2">
+                <p>
+                    기전융합종합설계<br>
+                    기전연구창업계획<br>
+                   
+                    
+                    
+                </p>
+            </div>
+
+            <button class="toggle-btn" onclick="toggleContent('content3', this)">학회
+            </button>
+            <div class="content" id="content3">
+                <p>
+                    자작전기차동아리 (AMG) <br>
+                    AMG는 기계공학부 소속 자작 전기차 동아리입니다. AMG에서는 학교에서 배우는 기계, 전자, 제어 부분을 활용하여 실제 전기차를 제작합니다.                     
+                  
+                </p>
+            </div>
+            
+            <button class="toggle-btn" onclick="toggleContent('content4', this)">전공별 특별 프로그램
+                <img src="arrow.png">
+            </button>
+            <div class="content" id="content4">
+                <p>
+                    수학캠프 
+                    <br>CATIA 캠프 
+                    
+                </p>
+            </div>
+
+            <button class="toggle-btn" onclick="toggleContent('content5', this)">실험실
+                <img src="arrow.png">
+            </button>
+            <div class="content" id="content5">
+                <p>
+                    로봇기구 및 동역학 연구실 <br>       
+                    CAE 응용역학 연구실<br>
+                    전자열유체 연구실<br>
+                </p>
+            </div>
+
+            <button class="toggle-btn" onclick="toggleContent('content6', this)">졸업생 취업
+                <img src="arrow.png">
+            </button>
+            <div class="content" id="content6">
+                <p>
+                    중공업  <br>
+                    POSCO, 현대중공업, 삼성중공업, 두산중공업, 효성중공업, 대림산업, 현대엔지 니어링, 삼성엔지니어링, 두산인프라코어, 삼성테크원, 엘아이지넥스원, 자이벡, 한국델파 이, 고려제강 등 
+                    <br>
+                    <br>자동차  <br>
+                    볼보그룹코리아, 현대자동차, 기아자동차, 현대모비스, 콘티넨탈 오토모티브, 발 레오 전장시스템 등 
+                    <br>
+                    <br>에너지 <br>
+                    한국전력공사, 한국수력원자력, LG화학, 한국서부•남부발전, 경남•영남에너지, 장한기술 등 
+                    <br>
+                    <br>공기업/연구소/정부 <br>
+                    변리사, 교수, 미래창조과학부, 한국철도기술 연구원, 한전 KPS 한국서부발전, 한국남부발전 등             
+                </p>
+            </div>
+
+            <button class="toggle-btn" onclick="toggleContent('content7', this)">졸업생 취업
+                <img src="arrow.png">
+            </button>
+            <div class="content" id="content7">
+                <p>
+                    국내 대학원 <br>
+                    한동대학교대학원, KAIST 대학원, POSTECH 대학원, 서울대학교대학원, GIST 대학원, 고 려대학교대학원, 연세대학교대학원 등 
+                    <br>
+                    <br>해외 대학원 <br>
+                    University of California-Berkeley, Texas A&M University, Michigan State University, The University of Maryland, The University of Tennessee, Georgetown University, 동경공업대학 등
+                </p>
+            </div>
+
+        </div>
+
+        <div class="intro">
+            <h2> 전자제어공학 전공</h2>
+            <p>전자제어공학 전공은 전기 및 기계 시스템이 자율적으로 최적의 동작을 수행할 수 있도록 하는 기술을 연구합니다. 제어이론, 신호처리, 임베디드 하드웨어와 같은 필수 분야를 다루며, 전기전자공학의 지식과 기계공학의 융합을 통해 다양한 지능형 시스템 개발을 목표로 합니다. 이를 통해 학생들은 스마트 제조, 로봇공학, 자동화 시스템 등에서 활약할 수 있는 전문성을 갖추게 됩니다.
+            </p>
+        </div>
+        
+        <div class="container">
+
+            <button class="toggle-btn" onclick="toggleContent('content8', this)">학회
+                <img src="arrow.png">
+            </button>
+            <div class="content" id="content8">
+                <p>
+                    자율주행자동차 학회 (HADA)<br>
+                    자율주행 자동차 센서 신호처리, 항법, 유도제어 소프트웨어, 딥러닝과 머신러닝을 이용한 카메라에 대해 연구합니다.
+                </p>
+            </div>
+
+            <button class="toggle-btn" onclick="toggleContent('content9', this)">전공별 특별 프로그램
+                <img src="arrow.png">
+            </button>
+            <div class="content" id="content9">
+                <p>
+                    수학캠프 <br>       
+                    PSpice 캠프 <br>
+                </p>
+            </div>
+
+            <button class="toggle-btn" onclick="toggleContent('content10', this)">실험실
+                <img src="arrow.png">
+            </button>
+            <div class="content" id="content10">
+                <p>
+                    지능형 자율이동시스템 연구실  <br>
+                    본 연구실에서는 무인 비행체(무인 항공기, 유도탄, 우주 발사체 등)의 유도제어를 위한 제어계 측 신기술을 연구하고 있습니다.                     <br>
+                    <br>휴먼 인터페이스 연구실 <br>
+                    본 연구실에서는 두뇌의 제어 메커니즘을 규명하는 연구를 수행함으로써 인간 중심의 지능형 인터페이스를 개발하는 것을 목표로 하고 있습니다. 
+                    <br>임베디드 로봇 연구실  <br>
+                    본 연구실에서는 외부의 데이터나 전력없이 자체적으로 판단하여 행동하는 임베디드 시스템을 연구하고 있습니다. 
+                    
+            </div>
+
+            <button class="toggle-btn" onclick="toggleContent('content11', this)">졸업생 취업
+                <img src="arrow.png">
+            </button>
+            <div class="content" id="content11">
+                <p>
+                    모빌리티 <br>
+                    현대자동차, 기아자동차, 현대모비스, 콘티넨탈 오토모티브, 발레오 전장시스템, 현대중공 업 SL그룹사 등                     <br>
+                    <br>전기·전자  <br>
+                    삼성전자, LG전자, 삼성디스플레이, LG디스플레이 등 
+                    <br>
+                    <br>방위산업 <br>
+                    LIG, 넥스원, 한화테크윈 등 
+                    <br>
+                    <br>공기업/연구소/정부 <br>
+                    변리사, 교수, 미래창조과학부, 한국철도기술 연구원, 한전KPS 한국서부발전, 한국남부발 전 등
+                </p>
+            </div>
+
+            <button class="toggle-btn" onclick="toggleContent('content12', this)">졸업생 진학
+                <img src="arrow.png">
+            </button>
+            <div class="content" id="content12">
+                <p>
+                    국내 대학원 <br>
+                    한동대학교대학원, KAIST 대학원, POSTECH 대학원, 서울대학교대학원, GIST 대학원, 고려대학교대학원, 연세대학교대학원 등                     <br>
+                    <br>해외 대학원 <br>
+                    University of California-Berkeley, Texas A&M University, Michigan State University, The University of Maryland, The University of Tennessee, Georgetown University, 동경공업대학 등
+                </p>
+            </div>
+
+        </div>
+
+        <div class="intro">
+            <h3> 교수진 </h3>
+            <img src="img_majors/prof/prof_8.png" id="prof"> 
+            <p>
+                이름 : 이종선 <br>
+                전공 : The Univ. of Iowa 생체공학 Ph.D.<br>
+                연구실 : 뉴턴홀 104호 <br>
+                전화 : 054-260-1393 <br>
+                이메일 : cslee@handong.edu <br>
+
+            </p>
+            <h3> 졸업생 진로 현황 및 취업률 </h3>
+            img src="img_majors/graph/work_8_1.png"class="grapgh">
+            <img src="img_majors/graph/work_8_2.png" class="graph">
+            
+        </div>
+
+    </section>
+
+
+</body>
+
+</html>

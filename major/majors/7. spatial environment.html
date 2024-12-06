@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    
+    <meta charset=UTF-8 />
+    <link rel="stylesheet" type="text/css" href="../majors/style_majors.css" />
+    <script src="../majors/majors_lib.js"></script>
+    <title> web programing final project main hompage </title>
+
+</head>
+
+<body > 
+    
+    <header>  
+        
+        <div class="menu-container">
+            <div class="menu-icon" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+
+        <div class="header-center">
+            <h1><a href="../../index.html">오늘부터 한동인</a></h1>
+        </div>
+
+    </header>
+
+    <div class="side-menu" onmouseleave="closeMenu()">
+        <a href="../../newculture/newculture/newmainculture.html">한동 문화</a>
+        <a href="../major_page.html">전공 소개</a>
+    </div>
+    
+    </header>
+
+    <nav>
+        <input id="night_day" type="button" value="Night Mode" onclick="balckWhite();"></input>
+    </nav>
+    
+    <section>
+        <div class="intro">
+            <h1> 공간환경시스템공학부</h1>
+            <p> “이웃을 위한 공간 환경설계”</p>
+            <p>전공 : 건설공학 전공, 도시환경공학 전공</p>
+            <h2> 건설공학 전공</h2>
+            <p>공간환경시스템공학부의 건설공학 전공은 건축과 토목 분야로 나뉘며, 인간의 삶과 환경을 통합적으로 이해하고 개선하는 데 중점을 둡니다. 건축 분야에서는 인간 생활과 밀접한 공간을 설계하며, 철학적 사고와 사람을 사랑하는 마음으로 창의적인 해법을 탐구합니다. 토목 분야에서는 도로, 철도, 교량, 댐 등 인프라를 설계·건설하기 위해 환경공학, 구조공학, 지반공학 등 다양한 기초 공학을 학습합니다. 이 전공은 기술적 역량과 윤리적 사고를 겸비한 인재를 양성하여, 지속 가능한 사회 발전에 기여할 수 있도록 돕습니다.
+            </p>                
+        </div>
+
+        <div class="container">
+        
+            <button class="toggle-btn" onclick="toggleContent('content1', this)">교과 과정
+                <img src="arrow.png">
+            </button>
+            <div class="content" id="content1">
+                <img src="img_majors/chart/architect.png" class="chart">
+            </div>
+        
+            <button class="toggle-btn" onclick="toggleContent('content2', this)">졸업 필수과목
+                <img src="arrow.png">
+            </button>
+            <div class="content" id="content2">
+                <p>
+                    건축설계 1~5<br>
+                    GIS 응용 및 공간분석<br>
+                    지리정보시스템<br>
+                    전산기응용설계<br>
+                    제도 및 CAD 실습
+
+                </p>
+            </div>
+            
+            <button class="toggle-btn" onclick="toggleContent('content4', this)">전공별 특별 프로그램
+                <img src="arrow.png">
+            </button>
+            <div class="content" id="content4">
+                <p>
+                    졸업설계 전시회 
+                    <br>만원의 사랑 프로젝트 
+                    <br>캡스톤 
+                    <br>수학캠프 
+                    
+                </p>
+            </div>
+
+            <button class="toggle-btn" onclick="toggleContent('content5', this)">졸업생 취업
+                <img src="arrow.png">
+            </button>
+            <div class="content" id="content5">
+                <p>
+                    건축 관련 기업 <br>
+                    삼성물산, 포스코건설, 현대건설, GS건설, 이랜드건설, 서본건설, 현대엔지니어링, SPARK, NIBC, 건보엔지니어링, LK엔지니어링, 태조엔지니어링, 유앤디엔지니어링, 포항아스 콘, 문화건축사무소, ENO건축설계사무소, 솔빛건축사사무소, DSK엔지니어링, Mott MacDonald 등 
+                    <br>연구소 <br>
+                    국토연구원, 서울시정개발연구원, 한국에너지기술연구원 등 
+                    <br>
+                    <br>공사 <br>
+                    토지주택공사, 농촌개발공사, 수자원개발공사, 인천개발공사 등
+
+                </p>
+            </div>
+
+            <button class="toggle-btn" onclick="toggleContent('content6', this)">졸업생 진학
+                <img src="arrow.png">
+            </button>
+            <div class="content" id="content6">
+                <p>
+                    국내 대학원 <br>
+                    서울대학교 건축학 대학원, 한국과학기술원(KAIST), 한양대학교 도시 대학원, 서울시립대 학교 대학원, 광주과학기술원, 한동대학교 대학원 등 
+                    <br>
+                    <br>해외 대학원 <br>
+                    Harvard University, Massachusetts Institute of Technology(MIT), University of Southern California(USC), University of California-Los Angeles (UCLA), TEXAS A&M University, University of Manchester 등
+
+                </p>
+            </div>
+
+        </div>
+
+        <div class="intro">
+            <h2> 도시환경공학 전공</h2>
+            <p>도시환경공학 전공은 생태환경을 기반으로 도시계획, 설계, 토지이용계획, 주거론, 환경공학 등 다양한 분야를 학습합니다. 도시계획 및 설계는 인간의 삶과 밀접한 관계가 있어 공간학, 경제학, 개발경제학 등 관련 인문사회 분야를 포괄적으로 다룹니다. 학생들은 도시와 환경 문제를 통합적으로 분석하고 지속 가능한 해결책을 모색할 수 있는 역량을 기릅니다. 이를 통해 현대 도시의 복잡한 문제를 해결하고, 인간 중심의 쾌적한 환경을 조성할 수 있는 전문가로 성장합니다.
+            </p>
+        </div>
+
+        <div class="container">
+            <button class="toggle-btn" onclick="toggleContent('content8', this)">학회
+                <img src="arrow.png">
+            </button>
+            <div class="content" id="content8">
+                <p>얼반카페 <br>
+                    Urban Cafe는 도시를 공부하는 학회로써 도시의 새로운 이슈나 문제에 대해 학습과 토론을 통 해 지식을 습득합니다. 또한 답사 등을 통하여 직접적인 경험을 함으로써 도시에 대해 새로운 시 각을 가지는 것과 알지 못했던 도시의 모습을 아는 것을 목표로 하고 있습니다
+                    <br>
+                    <br>아쿠아젠<br>
+                    토목공학학회 아쿠아젠은 자연과학의 기초 이론을 토대로 대기, 수질, 폐기물, 토양, 해양 등의 분야를 공학적으로 연구하는 학회입니다. 본 학회에서는 이러한 토목공학적 문제 해결에 필요한 이론과 기초를 공부하고, 나아가 공모전과 프로젝트를 진행하고 있습니다. 
+                    <br>
+                    <br>SEEBIM <br>
+                    BIM학술 동아리 SEEBIM은 토목, 건축, 도시라는 전공 분류에 상관 없이 모든 분야를 BIM(Building Information Modeling)에 기반해서 지능형 공간시스템 구축을 목표로 연구하 는 학회입니다. 기본 교육을 통해 BIM을 이해하고 개별적으로 AEC산업의 원하는 분야를 연구하 고 발표를 통해 연구 내용을 공유하면서 진행하게 됩니다. 그리고 매년 BIM 공모전에 나가서 본 인의 연구 성과를 적용시켜볼 수 있는 기회가 있습니다. 
+                    <br>
+                    <br>COHA <br>
+                    COHA(Cornerstone of Handong Architecture)는 건축의 기반, 기초를 다지기 위해 설립된 건축학회입니다. 건축의 컨셉과 표현기법을 탐구하고자 하는 사람들이 모여 모델 제작, 스케치, 가상 표현(2D&3D Drawing) 등 다양한 활동을 통해 자신이 추구하는 표현방식을 연습해보고, Design Concept Study와 Case Study를 통하여 다양한 건축가들의 건축언어와 표현 기법들 을 학습합니다. 
+                </p>                    
+            </div>
+
+            <button class="toggle-btn" onclick="toggleContent('content9', this)">전공별 특별 프로그램
+                <img src="arrow.png">
+            </button>
+            <div class="content" id="content9">
+                <p>
+                    Me'Card (Management and Economics' Career Research and Development)
+                    <br>만원의 사랑 프로젝트 
+                    <br>캡스톤 
+                    <br>수학캠프 
+                    
+                </p>
+            </div>
+
+            <button class="toggle-btn" onclick="toggleContent('content10', this)">졸업생 취업
+                <img src="arrow.png">
+            </button>
+            <div class="content" id="content10">
+                <p>
+                    건축 관련 기업 <br>
+                    삼성물산, 포스코건설, 현대건설, GS건설, 이랜드건설, 서본건설, 현대엔지니어링, SPARK, NIBC, 건보엔지니어링, LK엔지니어링, 태조엔지니어링, 유앤디엔지니어링, 포항아스콘, 문화건축사무소, ENO건축설계사무소, 솔빛건축사사무소, DSK엔지니어링, Mott MacDonald 등 
+                    <br>
+                    <br>연구소 <br>
+                    국토연구원, 서울시정개발연구원, 한국에너지기술연구원 등 
+                    <br>
+                    <br>공사 <br>
+                    토지주택공사, 농촌개발공사, 수자원개발공사, 인천개발공사 등
+
+                </p>
+            </div>
+
+            <button class="toggle-btn" onclick="toggleContent('content11', this)">졸업생 진학
+                <img src="arrow.png">
+            </button>
+            <div class="content" id="content11">
+                <p>
+                    국내 대학원 <br>
+                    서울대학교 건축학 대학원, 한국과학기술원(KAIST), 한양대학교 도시대학원, 서울시립대학교 대 학원, 광주과학기술원, 한동대학교 대학원 등 
+                    <br>
+                    <br>해외 대학원<br> 
+                    Harvard Kennedy School, Aalto University, Massachusetts Institute of Technology(MIT), University of Southern California(USC), University of California, Los Angeles (UCLA), TEXAS A&M University 등
+
+                </p>
+            </div>
+
+        </div>
+
+        <div class="intro">
+            <h3> 교수진 </h3>
+            <img src="img_majors/prof/iw_nam.jpg" id="prof"> 
+            <h3> 졸업생 진로 현황 및 취업룰 </h3>
+            <p>건설공학</p>
+            <img src="img_majors/graph/architect(2).png" class="graph">
+            <p>도시환경공학</p>
+            <img src="img_majors/graph/city(2).png" class="graph">
+        </div>
+
+    </section>
+
+
+</body>
+
+</html>

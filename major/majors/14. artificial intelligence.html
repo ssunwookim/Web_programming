@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html>
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    
+    <meta charset=UTF-8 />
+    <link rel="stylesheet" type="text/css" href="../majors/style_majors.css" />
+    <script src="../majors/majors_lib.js"></script>
+    <title> web programing final project main hompage </title>
+
+</head>
+
+<body > 
+    <header>  
+        
+        <div class="menu-container">
+            <div class="menu-icon" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+
+        <div class="header-center">
+            <h1><a href="../../index.html">오늘부터 한동인</a></h1>
+        </div>
+
+    </header>
+
+    <div class="side-menu" onmouseleave="closeMenu()">
+        <a href="../../newculture/newculture/newmainculture.html">한동 문화</a>
+        <a href="../major_page.html">전공 소개</a>
+    </div>
+    
+    </header>
+
+    <nav>
+        <input id="night_day" type="button" value="Night Mode" onclick="balckWhite();"></input>
+    </nav>
+    
+    <section>
+        <div class="intro">
+            <h1> AI융합 교육원</h1>
+            <p>"인공지능 어깨 위에 올라 새로운 세상을 열라!"</p>
+            <p>전공 : AI융합전공, 데이터 사이언스 전공</p>
+            <h2> AI융합전공</h2>
+            <p>한동대학교 AI융합교육원은 이와 같은 우리에게 다양하게 그리고 막대한 영향을 끼치 는 인공지능기술을 구체적인 분야에 활용하는 융합적인 교육을 위해서 설립되었습니다. 
+            </p>
+        </div>
+
+        <div class="container">
+        
+            <button class="toggle-btn" onclick="toggleContent('content1', this)">교과 과정
+                <img src="arrow.png">
+            </button>
+            <div class="content" id="content1">
+                <p>
+                    <img src="img_majors/chart/ai_1.png" class="chart">
+
+            </div>
+        
+        </div>
+
+        <div class="intro">
+            <h2> 데이터 사이언스 전공</h2>
+            <p>데이터 사이언스 전공은 넘쳐나는 정보와 지식 속에서 그 안에 내제된 참된 의미를 찾아 내고 분별해내어 올바른 정보를 정보를 제공하는 전문가 양성을 목표로 합니다. 데이터 사이언스의 핵심 지식은 크게 통계학과 프로그래밍으로 구분되며 서로 상호 보완적인 두 분야에 대해 배움으로써 보다 유연하고 통찰력 있는 데이터 전문가로 성장할 수 있습니다. 
+            </p>
+        </div>
+        
+        <div class="container">
+        
+            <button class="toggle-btn" onclick="toggleContent('content2', this)">교과 과정
+                <img src="arrow.png">
+            </button>
+            <div class="content" id="content2">
+                <p>
+                    <img src="img_majors/chart/ai_2.png" class="chart">
+
+            </div>
+        
+        </div>
+
+
+        <div class="intro">
+            <h3> 교수진 </h3>
+            <img src="img_majors/prof/prof_14.png" id="prof"> 
+            <p>
+                이름 : 이상산<br>
+                전공 : Stanford University 기계공학 Ph.D.<br>
+                연구실 : 뉴턴홀 206호 <br>
+                전화 : 054-260-1365<br>
+                이메일 : sslee@handong.edu <br>
+        </div>
+
+    </section>
+
+
+</body>
+
+</html>

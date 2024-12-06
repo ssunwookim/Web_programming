@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html>
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    
+    <meta charset=UTF-8 />
+    <link rel="stylesheet" type="text/css" href="../majors/style_majors.css" />
+    <script src="../majors/majors_lib.js"></script>
+    <title> web programing final project main hompage </title>
+
+</head>
+
+<body > 
+    
+    <header>  
+        
+        <div class="menu-container">
+            <div class="menu-icon" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+
+        <div class="header-center">
+            <h1><a href="../../index.html">오늘부터 한동인</a></h1>
+        </div>
+
+    </header>
+
+    <div class="side-menu" onmouseleave="closeMenu()">
+        <a href="../../newculture/newculture/newmainculture.html">한동 문화</a>
+        <a href="../major_page.html">전공 소개</a>
+    </div>
+    
+    </header>
+
+    <nav>
+        <input id="night_day" type="button" value="Night Mode" onclick="balckWhite();"></input>
+    </nav>
+
+    <section>
+        <div class="intro">
+            <h1> 전산전자 공학부</h1>
+            <p>“하나님의 마음, 미래기술의 심장”</p>
+            <p>전공 : 컴퓨터공학 전공, 전자공학 전공</p>
+            <h2> 컴퓨터공학 전공</h2>
+            <p>컴퓨터 공학은 컴퓨터 SW 및 HW와 관련된 모든 기술을 연구/개발하고, 이를 여러 분야에 응용하는 학문입니다. 컴퓨터공학은 4차 산업혁명의 핵심 기술인 인공지능, 사물인터넷, 빅데 이터를 비롯한 다양한 SW와 디지털 HW의 설계 및 구현에 대한 모든 기술을 포함합니다. 응 용 분야로는 컴퓨터 뿐 아니라 스마트폰, 클라우드, 스마트카/드론/로봇 등이 있습니다. 컴퓨 터공학은 서로 다른 분야들을 하나로 연결하기 때문에 융합의 핵심 고리가 됩니다. 
+            </p>
+        </div>
+
+        <div class="container">
+        
+            <button class="toggle-btn" onclick="toggleContent('content1', this)">교과 과정
+                <img src="arrow.png">
+            </button>
+            <div class="content" id="content1">
+                <img src="img_majors/chart/cs_1.png" class="chart">
+            </div>
+        
+            <button class="toggle-btn" onclick="toggleContent('content2', this)">졸업 필수과목
+                <img src="arrow.png">
+            </button>
+            <div class="content" id="content2">
+                <p>
+                    공학설계입문<br>
+                    데이타구조<br>
+                    컴퓨터구조<br>
+                    오픈소스 스튜디오<br>
+                    AI 프로젝트 입문<br>
+                    운영체제<br>
+                    캡스톤 디자인1,2<br>
+                    
+                </p>
+            </div>
+
+            <button class="toggle-btn" onclick="toggleContent('content3', this)">학회
+            </button>
+            <div class="content" id="content3">
+                <p>
+                    Linux Hackers<br>
+                    리눅스, 임베디드 시스템, 모바일 어플리케이션, 웹 등 각자의 관심분야에 따라 소그룹 스터디를 하고, 공모전 참가 등을 목표로 프로젝트를 진행합니다. 
+                    <br>
+                    <br>CRA (Computer Research Association) <br>
+                    프로그래밍 언어 습득을 기본으로 전산 분야의 신기술을 공부하고, 세미나 등의 활동을 하는 동아리입니다.
+                    <br>
+                    <br>GHOST (Global Handong Oriented Security Team) <br>
+                    신입생들에 게 방학 6주간의 교육 기간을 통해 기본적인 Unix, Network, Linux, 보안 관련 프로그 램 등을 가르칩니다. 뿐만 아니라 한동어플을 개발하고 관리하여 한동대학교 학생들에 게 편의를 제공하고 있습니다.
+                    <br>
+                    <br>슬기짜기<br>
+                    한동대학교 개교년에 창설되어 전통과 역사를 자랑하는 전산동아리로서 다양한 학부생들로 구성된 것이 특징입니다. 학기 중에 전공과목 스터디 모임과 각종 프로젝트, 공모전 을 진행함으로써 실력을 향상시키고 있습니다. 
+                    <br>
+                    <br>SODA (Software Development Academy)<br>
+                    SODA는 창업을 희망하는 학생들을 모아 교육 시켜 역량을 키우는 학회로서 저학년을 대상으로 앱 서비스 개발 및 운영할 수 있는 인재를 양성하는 것을 목표로 합니다. 
+                    <br>
+                    <br>일본 IT 학회  <br>
+                    일본 IT 학회는 일본 취업에 기본 목표를 두며 선교와 일본어 공부에 흥미를 가진 학생 들이 모인 학회입니다. 
+                    <br>
+                    <br>CRAIST90% <br>
+                    배워서 남주는 마음을 아시아를 넘어 아프리카까지 ! CRAIST90%는 세상의 소외된 90%의 이웃들 위해 전공지식과 선교로 세상을 바꾸는 한동 유일 개발도상국 소셜벤처 창업•적정기술 연구학회입니다.
+                </p>
+            </div>
+            
+            <button class="toggle-btn" onclick="toggleContent('content4', this)">전공별 특별 프로그램
+                <img src="arrow.png">
+            </button>
+            <div class="content" id="content4">
+                <p>
+                    Mac OS 기초활용 one day 캠프 
+                    <br>Problem Solving in Python 캠프 
+                    <br>Unity 캠프
+                    <br>C++ 집중 캠프 
+                    <br>C프로그래밍 캠프 
+                    <br>머신러닝 캠프 
+                    <br>음성인식 캠프 
+                </p>
+            </div>
+
+            <button class="toggle-btn" onclick="toggleContent('content5', this)">졸업생 취업
+                <img src="arrow.png">
+            </button>
+            <div class="content" id="content5">
+                <p>
+                    인터넷/통신 <br>
+                    Google, Naver, Daum, KT, KT DS, LG U+, SK, ETRI(전자통신연구원), 롯데정보통신 등 
+                    <br>
+                    <br>S/W 및 보안  <br>
+                    Microsoft, Oracle, 안랩, 티맥스 소프트, TSB, Infobank, 포스코 ICT, 산업은행 보안팀, 한국IBM, 기업은행 보안팀 등                     <br>
+                    <br>게임  <br>
+                    NC소프트, NHN 엔터테인먼트 등    
+                    <br>
+                    <br>IT 기업  <br>
+                    삼성전자, 삼성SDS, 삼성엔지니어링, 삼성모바일디스플레이, LG전자, LG Display, LG 실트론, 한화 테크엠, 포스코(POSCO), 팬텍, 핸드스튜디오 등                 </p>
+            </div>
+
+            <button class="toggle-btn" onclick="toggleContent('content6', this)">졸업생 진학
+                <img src="arrow.png">
+            </button>
+            <div class="content" id="content6">
+                <p>
+                    국내 대학원 <br>
+                    한동대학교, DGIST(대구경북 과학기술원) , GIST(광주과학기술원), KAIST(한국과학기술원), POSTECH(포항공대), 고려대학교, 서울대학교, 성균관대학교, 연세대학교, 한양대학교 등 (가나다 순) 
+                    <br>
+                    <br>해외 대학원 <br>
+                    Arlington University, Carnegie Mellon University, Columbia University, Indiana University, Johns Hopkins University, Michigan University, Rensselaer University,Texas A&M University, University of California Irvine, University of Pittsburgh 등                </p>
+            </div>
+
+        </div>
+
+        <div class="intro">
+            <h2> 전자공학 전공</h2>
+        </div>
+        
+        <div class="container">
+
+            <button class="toggle-btn" onclick="toggleContent('content7', this)">교과과정
+                <img src="arrow.png">
+            </button>
+            <div class="content" id="content7">
+                <img src="img_majors/chart/cs_2.png" class="chart">
+            </div>
+
+            <button class="toggle-btn" onclick="toggleContent('content8', this)">졸업필수과목
+                <img src="arrow.png">
+            </button>
+            <div class="content" id="content8">
+                <p>
+                    공학설계입문 <br>       
+                    기초회로 및 논리실습<br>
+                    기초신호처리실습<br>
+                    캡스톤디자인1,2 <br>
+                </p>
+
+            </div>
+
+            <button class="toggle-btn" onclick="toggleContent('content9', this)">학회
+                <img src="arrow.png">
+            </button>
+            <div class="content" id="content9">
+                <p>
+                    Chips Chips (칩스칩스) <br>
+                    Chip Design에 관련된 연구, 토론 및 Chip 설계, 제작을 통해서 회원들의 실력 향상과 한동대학교 내 Chip Design 연구의 활성화를 촉진합니다. 나아가 관련 단체들과의 정보 교류와 협동 연구를 통해 Chip 관련 사업에 이바지함을 목적으로 하고 있습니다.                     <br>휴먼 인터페이스 연구실 <br>
+                    <br>이론 (e論)  <br>
+                    팀을 결성하여 기업공모전 참여를 위한 프로젝트 과제를 수행하고, 전자공학 학술지 스터디 및 연구 과제에 참여합니다. 또한 졸업한 선배들과의 만남을 통해 진학 및 취업준비 과정과 노하우를 교류하고, 어학시험 및 자격증 시험 준비를 관리합니다. 
+                    <br>시선<br>
+                    시선학회는 우리 사회의 소외된 이웃, 특히 장애인들을 바라보고 그들의 필요를 채워 주는 IT기술을 연구하는 학회입니다. 특정한 기술 분야에 얽매이지 않고 장애인들의 필요에 따라 앱 개발, VR, IoT, 컴퓨터 네트워크 등 다양한 기술을 활용한 솔루션을 개발하고 있습니다.
+                </p>                    
+            </div>
+
+            <button class="toggle-btn" onclick="toggleContent('content10', this)">전공별 특별 프로그램
+                <img src="arrow.png">
+            </button>
+            <div class="content" id="content10">
+                <p>
+                   캡스톤 축제 <br>       
+                   증강현실 캠프<br>
+                    
+                </p>
+
+            </div>
+
+            <button class="toggle-btn" onclick="toggleContent('content11', this)">졸업생 취업
+                <img src="arrow.png">
+            </button>
+            <div class="content" id="content11">
+                <p>
+                    전자회사, 임베디드/모바일 전문업체  <br>
+                    삼성전자, 삼성 SDI, 삼성 테크윈, 삼성 모바일 디스플레이, LG전자, LG 디스플레이, LIG 넥스원, 팬텍, Cisco, Intel, Motorola, Texas Instruments, 핸드스튜디오, 캐논 코리아, 전자통신연구원, 엠코테크놀로지코리아 등                    <br>전력, 에너지   <br>
+                    <br>
+                    <br>공학분야  <br>
+                    한전KDN, 한국전력기술, 한국수력원자력, 경남에너지 등 
+                    <br>
+                    <br>공기업/연구소/정부 <br>
+                    현대자동차, 현대중공업, 현대모비스, 현대케피코, 기아자동차, 삼성 엔지니어링, STX 조선, 대양상선 등 
+                </p>
+            </div>
+
+            <button class="toggle-btn" onclick="toggleContent('content12', this)">졸업생 진학
+                <img src="arrow.png">
+            </button>
+            <div class="content" id="content12">
+                <p>
+                    국내 대학원 <br>
+                    한동대학교, KAIST (한국과학기술원), ICU (정보통신대학원), 서울대학교, 고려 대학교, 연세대학교, 성균관대학교, 한양대학교, POSTECH(포항공대), GIST(광주 과학기술원), DGIST(대구경북과학기술원) 등 
+                    <br>해외 대학원 <br>
+                    Columbia University, Indiana University, Michigan University, University of California Irvine, Rensselaer University, Johns Hopkins University, Texas A&M University, University of Pittsburgh, Arlington University, Carnegie Mellon University 등
+             </p>
+            </div>
+
+        </div>
+
+        <div class="intro">
+            <h3> 교수진 </h3>
+            <img src="img_majors/prof/prof_10.png" id="prof"> 
+            <p>
+                이름 : 남재창 <br>
+                전공 : 홍콩과기대 컴퓨터공학 Ph.D.<br>
+                연구실 : 뉴턴홀 407호 <br>
+                전화 : 054-260-1404 <br>
+                이메일 :jcnam@handong.edu <br>
+            </p>
+            <h3> 졸업생 진로 현황 및 취업률 </h3>
+            <img src="img_majors/graph/work_10.png" class="graph">
+        </div>
+
+    </section>
+
+
+</body>
+
+</html>
