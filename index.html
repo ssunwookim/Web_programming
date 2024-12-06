@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Match Game</title>
@@ -27,39 +28,44 @@
             }
         } 
 
-        function balckWhite(){
-            document.getElementsByNamee
-            if(document.querySelector('#night_day').value === 'Night Mode'){ 
-                document.querySelector('body').style.backgroundColor = 'black';
-                document.querySelector('body').style.color = 'white';
+        function balckWhite() {
+            const body = document.querySelector('body');
+            if (document.querySelector('#night_day').value === 'Night Mode') {
+                body.style.backgroundColor = 'black';
+                body.style.color = 'white';
                 document.querySelector('#night_day').value = 'Day Mode';
-            } else { 
-                document.querySelector('body').style.backgroundColor = 'white';
-                document.querySelector('body').style.color = 'black';
+
+                // Add night mode class for dynamic styling
+                body.classList.add('night-mode');
+            } else {
+                body.style.backgroundColor = 'white';
+                body.style.color = 'black';
                 document.querySelector('#night_day').value = 'Night Mode';
+
+                // Remove night mode class for day styling
+                body.classList.remove('night-mode');
             }
         }
 
         const imagePaths = [
-            'img/majors/ai_1.png',
-            'img/Food_image.png',
-            'img/gimbab.jpg',
-            'img/icecream.png',
-            'img/kimchisoup.jpg',
-        ]; // Only 5 unique images for 10 cards
+            { path: 'img/majorpic2.jpg', page: 'major/major_page.html' },
+            { path: 'img/majorpic1.jpg', page: 'major/major_page.html' },
+            { path: 'img/culturepic1.jpg', page: 'newculture/newculture/newmainculture.html' },
+            { path: 'img/culturepic2.jpg', page: 'newculture/newculture/newmainculture.html' },
+            { path: 'img/culturepic3.jpg', page: 'newculture/newculture/newmainculture.html' },
+        ];
 
-        let shuffledImages = []; // Stores shuffled images
-        let firstSelection = null; // Track first clicked box
-        let secondSelection = null; // Track second clicked box
-        let isFlipping = false; // Prevent interaction during flipping phase
+        let shuffledImages = [];
+        let firstSelection = null;
+        let secondSelection = null;
+        let isFlipping = false;
+        let flipTimer = null; 
 
-        // Shuffle and duplicate images
         function shuffleImages() {
-            const duplicatedImages = [...imagePaths, ...imagePaths];
-            shuffledImages = duplicatedImages.sort(() => Math.random() - 0.5);
+            const duplicatedImages = [...imagePaths, ...imagePaths]; 
+            shuffledImages = duplicatedImages.sort(() => Math.random() - 0.5); 
         }
 
-        // Create divs for the game board
         function makeDiv() {
             shuffleImages();
             let result = '';
@@ -69,70 +75,77 @@
             document.getElementById('div_block').innerHTML = result;
         }
 
-        // Show all images when the button is pressed
         function revealAllImages() {
-            for (let i = 0; i < shuffledImages.length; i++) {
-                const box = document.getElementById(`box${i}`);
-                box.style.backgroundImage = `url('${shuffledImages[i]}')`;
+            const boxes = document.querySelectorAll('.boxes');
+            boxes.forEach((box, i) => {
+                box.style.backgroundImage = `url('${shuffledImages[i].path}')`;
                 box.classList.add('revealed');
-            }
+            });
 
-            // Flip back the images after 5 seconds
-            setTimeout(hideAllImages, 5000);
+            if (flipTimer) {
+                clearTimeout(flipTimer);
+            }
+            flipTimer = setTimeout(hideAllImages, 5000);
         }
 
-        // Hide all images
         function hideAllImages() {
-            for (let i = 0; i < shuffledImages.length; i++) {
-                const box = document.getElementById(`box${i}`);
+            const boxes = document.querySelectorAll('.boxes');
+            boxes.forEach((box, i) => {
                 box.style.backgroundImage = '';
                 box.classList.remove('revealed');
-                box.setAttribute('onclick', `revealImage(${i})`); // Enable click functionality
-            }
-            isFlipping = false; // Allow clicks after flipping
+                box.setAttribute('onclick', `revealImage(${i})`);
+            });
+            isFlipping = false;
+            flipTimer = null;
         }
 
-        // Reveal image on click
-        function revealImage(index) {
-            if (isFlipping) return; // Prevent interaction during flipping phase
-            const box = document.getElementById(`box${index}`);
+        function toggleGame(buttonTextElement) {
+            const rules = document.getElementById('rules');
+            const divBlock = document.getElementById('div_block');
 
-            // Ignore clicks on already revealed boxes
+            if (buttonTextElement.innerText === "Start") {
+                rules.style.display = 'none'; 
+                divBlock.style.display = 'flex'; 
+                buttonTextElement.innerText = "Restart"; 
+                document.querySelector(".red-button-container img").style.width = "22%";
+                document.querySelector(".red-button-text").style.fontSize = "17px";
+                makeDiv(); 
+                revealAllImages(); 
+            } else {
+                makeDiv(); 
+                revealAllImages(); 
+            }
+        }
+
+        function revealImage(index) {
+            if (isFlipping) return;
+            const box = document.getElementById(`box${index}`);
             if (box.classList.contains('revealed') || secondSelection) return;
 
-            // Reveal the image
-            box.style.backgroundImage = `url('${shuffledImages[index]}')`;
+            box.style.backgroundImage = `url('${shuffledImages[index].path}')`;
             box.classList.add('revealed');
 
-            // Track selections
             if (!firstSelection) {
                 firstSelection = { index, element: box, image: shuffledImages[index] };
             } else {
                 secondSelection = { index, element: box, image: shuffledImages[index] };
-
-                // Check if the images match
-                isFlipping = true; // Temporarily disable further clicks
+                isFlipping = true;
                 setTimeout(checkMatch, 1000);
             }
         }
 
-        // Check if two selected images match
         function checkMatch() {
-            if (firstSelection.image === secondSelection.image) {
-                // Match found: redirect to the next page
-                window.location.href = "/major/major_page.html";
+            if (firstSelection.image.path === secondSelection.image.path) {
+                window.location.href = firstSelection.image.page; 
             } else {
-                // No match: flip back
                 firstSelection.element.style.backgroundImage = '';
                 secondSelection.element.style.backgroundImage = '';
                 firstSelection.element.classList.remove('revealed');
                 secondSelection.element.classList.remove('revealed');
             }
-
-            // Reset selections
             firstSelection = null;
             secondSelection = null;
-            isFlipping = false; // Allow clicks again
+            isFlipping = false;
         }
 
         // Reset the game
@@ -142,7 +155,6 @@
             isFlipping = false;
             makeDiv();
         }
-
         
         function toggleMenu() {
             const sideMenu = document.querySelector('.side-menu');
@@ -154,21 +166,35 @@
             sideMenu.classList.remove('active');
         }
 
-        // Show the selected content and hide others
         function showContent(contentId) {
-            // Remove 'active' class from all tabs and contents
             document.querySelectorAll('.book-tab').forEach(tab => tab.classList.remove('active'));
             document.querySelectorAll('.book-content').forEach(content => content.classList.remove('active'));
             
-            // Add 'active' class to the selected tab and content
             document.querySelector(`[onclick="showContent('${contentId}')"]`).classList.add('active');
             document.getElementById(contentId).classList.add('active');
         }
-        // Initialize with the first tab active
         document.addEventListener("DOMContentLoaded", () => {
             showContent('joy');
         });
 
+                // 로그인 파트
+        document.addEventListener("DOMContentLoaded", () => {
+            // 로그인 정보가 있으면 환영 메시지 출력
+            const params = new URLSearchParams(window.location.search);
+            const name = params.get("name");
+            const major = params.get("major");
+
+            if (name && major) {
+                const welcomeDiv = document.getElementById("welcome-message");
+                welcomeDiv.innerHTML = `안녕하세요, <strong>${major}</strong> 소속 <strong>${name} 학우님</strong> 환영합니다.`;
+                welcomeDiv.style.display = "block";
+            }
+        });
+
+        function goToLogin() {
+            window.location.href = "Login/login_page.html";
+        }
+        
     </script>
 </head>
 
@@ -185,33 +211,46 @@
         </div>
 
         <div class="header-center">
-            <img src="img/logo.png" alt="사진 없음">
-            <h1><a href="main_page.html">한동대학교</a></h1>
+            <h1><a href= "homepage.html">오늘부터 한동인</a></h1>
+        </div>
+
+        <div class="log_in">
+            <botton onclick="goToLogin()"> Log in </botton>
         </div>
 
     </header>
+    
 
     <div class="side-menu" onmouseleave="closeMenu()">
-        <a href="../Culture/culture_page.html">한동 문화</a>
-        <a href="/major/major_page.html">전공 소개</a>
+        <a href="newculture/newculture/newmainculture.html">한동 문화</a>
+        <a href="major/major_page.html">전공 소개</a>
     </div>
 
+    <nav>
+        <input id="night_day" type="button" value="Night Mode" onclick="balckWhite();"></input>
+        <div id="welcome-message" style="display: flex; margin: 20px; font-size: 18px; color: green; text-align: center;"></div>
+    </nav>
 
     <section>
 
-        <input id="night_day" type="button" value="Night Mode" onclick="balckWhite();"></input>
-
-        <div> 
-            <p> 문화 페이지로 이동하고 싶으면 문화 사진 고르세요. 전공 페이지로 이동하고 싶으면 전공 사진을 고르세요.</p>
+        <div id="rules"> 
+            <h2>게임 방법 </h2>
+            <br>
+           
+                <p>1. Start 버튼을 눌러  그림을 5초 동안 확인하세요. </p>
+                <p>2. 이동하려는 페이지(전공/문화)와 관련된 그림 한 쌍을 기억하세요.</p>
+                <p>3. 사라진 그림을 클릭해 같은 그림이 그려진 카드 한 쌍을 맞추면 원하는 페이지로 이동합니다!</p><br>
+                
+                <p><strong>Tip:</strong> 그림을 잘 기억해 두세요! Restart 버튼을 누르면 게임이 다시 시작됩니다. </p>
         </div>
 
-        <div>
-            <button onclick="revealAllImages()">Show Images</button>
-            <button onclick="reset()">Restart</button>
-            
+        <div id="div_block" style="display: none;"></div>
+
+        <div class="red-button-container" onclick="toggleGame(this.querySelector('.red-button-text'))">
+            <img src="img/button.png" alt="Red Button">
+            <div class="red-button-text">Start</div>
         </div>
 
-        <div id="div_block"></div>
 
     </section>
 
