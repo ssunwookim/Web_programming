@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script>
+        function login() {
+            const name = document.getElementById("name").value;
+            const major = document.getElementById("major").value;
+
+            if (!name || !major) {
+                alert("이름과 전공을 모두 입력하세요!");
+                return;
+            }
+
+            // 메인 페이지로 이름과 전공을 전달
+            window.location.href = `../index.html?name=${encodeURIComponent(name)}&major=${encodeURIComponent(major)}`;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>로그인</h1>
+    </header>
+    <section>
+        <form onsubmit="event.preventDefault(); login();">
+            <label for="name">이름:</label>
+            <input type="text" id="name" placeholder="이름을 입력하세요" required />
+            <br><br>
+            <label for="major">전공:</label>
+            <input type="text" id="major" placeholder="전공을 입력하세요" required />
+            <br><br>
+            <button type="submit">로그인</button>
+        </form>
+    </section>
+</body>
+</html>
