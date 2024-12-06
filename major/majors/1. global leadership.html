@@ -5,36 +5,43 @@
 <head>
     
     <meta charset=UTF-8 />
-    <link rel="stylesheet" type="text/css" href="style_majors.css" />
-    <script src="majors_lib.js"></script>
+    <link rel="stylesheet" type="text/css" href="../majors/style_majors.css" />
+    <script src="../majors/majors_lib.js"></script>
     <title> web programing final project main hompage </title>
 
 </head>
 
 <body > 
     
-    <header>
-
-        <div>
-            <img src="../../img/logo.png" alt="사진 없음">
-        </div>    
+    <header>  
         
-        <div>
-            <h1> <a href="../../index.html"> 한동대학교 </a> </h1>
-        <div>
+        <div class="menu-container">
+            <div class="menu-icon" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+
+        <div class="header-center"> 
+            <h1><a href="../../index.html">오늘부터 한동인</a></h1>
+        </div>
+
+    </header>
+
+    <div class="side-menu" onmouseleave="closeMenu()">
+        <a href="../../newculture/newculture/newmainculture.html">한동 문화</a>
+        <a href="../major_page.html">전공 소개</a>
+    </div>
     
     </header>
-    <section>
+
+    <nav>
         <input id="night_day" type="button" value="Night Mode" onclick="balckWhite();"></input>
+    </nav>
+
+    <section>
         
-        <div id="ulul">
-            <ul>
-                <li><a href="mechanical_control_eng/mce_page.html">기계제어+전자제어공학</a></li>
-                <li><a href="mechanical_control_eng/mce_page.html">기계제어+전자제어공학</a></li>
-                <li><a href="mechanical_control_eng/mce_page.html">기계제어+전자제어공학</a></li>
-                <li><a href="mechanical_control_eng/mce_page.html">기계제어+전자제어공학</a></li>
-            </ul>   
-        </div>
         <div class="intro">
             <h1>글로벌리더십학부</h1>
             <p>무전공</p>
@@ -45,21 +52,21 @@
         <div class="container">
         
             <button class="toggle-btn" onclick="toggleContent('content1', this)">교과 과정
-                <img src="../img/arrow.png">
+                <img src="arrow.png">
             </button>
             <div class="content" id="content1">
-                <img src="../img/g1.png"> 
+                <img src="img_majors/chart/g1.png" class="chart"> 
             </div>
         
             <button class="toggle-btn" onclick="toggleContent('content2', this)">졸업 필수과목
-                <img src="../img/arrow.png">
+                <img src="arrow.png">
             </button>
             <div class="content" id="content2">
-                <img src="../img/g2.png">
+                <img src="img_majors/chart/g2.png" class="chart">
             </div>
 
             <button class="toggle-btn" onclick="toggleContent('content3', this)">학회
-                <img src="../img/arrow.png">
+                <img src="arrow.png">
             </button>
             <div class="content" id="content3">
                 <p>
@@ -71,8 +78,7 @@
 
         <div class="intro">
             <h3> 교수진 </h3>
-            <img src="../img/prof_01_10.jpg"> 
-            <h3> 졸업생 진로 현황 및 취업룰 </h3>
+            <img src="img_majors/prof/prof_01_10.jpg" id="prof"> 
         </div>
 
     </section>
