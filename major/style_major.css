@@ -1,92 +1,150 @@
-html, body{
-    height: 100%;
+html, body {
+  height: 110%;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  min-height: 100vh;
+}
 
 header {
-    margin: 0;
-    width: 100%;
-    height: 15%;
-    background-color: rgba(60, 170, 239, 0.5) ;
-    text-align: center;
-    justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 12%;
+  background-color: #e0f7fa ;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1); /* Clean border */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  padding: 0 20px;
 }
 
-header > div.title {
-    display: inline-block;
+header > div {
+  display: inline-block;
 }
 
-header > div> img {
-    width:  60px;
-    height: 60px;
-    margin-top: 10%;
+/* Reset and Body */
+* {
+  box-sizing: border-box;
 }
 
-header > div> h1 {
-    font-size: 40px;
+html, body {
+  height: 110%;
+  font-family: Arial, sans-serif;
+}
+/* 로고와 텍스트 그룹 */
+.header-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center; 
+  gap: 10px; 
 }
 
-header > div.title > h1 > a {
-    color:black;
-    text-decoration: none;
+/* 텍스트 */
+.header-center h1 {
+  font-size: 40px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 900; /* Extra bold */
+  margin: 20px 0;
+  color: #fff; /* White text */
+  text-align: center;
+  background: linear-gradient(to right, #3a77e2, #6a11cb);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); 
+  transition: all 0.4s ease;
+  animation: glow 2s infinite;
 }
 
-header > div.title > h1 > a:visited {
-    color:black;
-    text-decoration: none;
+.header-center h1 a {
+  color: black;
+  text-decoration: none;
 }
 
-/* menu */
-#openMenu {
-    position: relative;
-    z-index: 1000;
+.header-center h1:hover {
+  transform: scale(1.08); /* Zoom effect */
+  text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.7);
 }
 
-#openMenu:hover .menus {
-    transform: translateY(-8%);
+/* Hamburger Menu */
+.menu-container {
+  position: relative;
+  cursor: pointer;
 }
 
-.menus:hover {
-    cursor: pointer;
-    transform: translateY(-8%);
+/* Hamburger Icon */
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+.menu-icon div {
+  width: 40px;
+  height: 5px;
+  background-color: #333;
+  border-radius: 5px;
+  transition: all 0.3s ease;
 }
 
-.menus {
-    text-align: center;
-    width: 100%;
-    height: 150px;
-    margin: 0;
-    padding: 0;
-    background-color: rgba(255, 10, 10, 0.4);
-    transition: transform 0.5s;
-    transform: translateY(-200%);
+/* Side Menu */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -10%; 
+  width: 10%; 
+  height: 100%;
+  background-color: rgba(60, 170, 239, 0.9);
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+.side-menu.active {
+  left: 0; 
+}
+.side-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+.side-menu a:hover {
+  text-decoration: underline;
 }
 
-.menus > div {
-    display: inline-block;
-    text-align: center;
-    width: 300px;
-    height: 70px;
-    padding-top: 1.3%;
-    border-radius: 20px;
-    margin-top: 2%;
-    margin-left: 100px;
-    margin-right: 100px;
-    background-color: rgb(128, 128, 128, 0.7);
-    font-size: 30px;
+nav {
+  text-align: left;
 }
-
 
 /* section 카테고리 버튼 */
 .button-container {
+    width: 1000px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around; 
+    margin: auto;
     gap: 10px;
-    padding: 50px 200px 0px 400px;
+    padding-left: 50px;
+    padding-right: 50px;
+    justify-content: center;
+    text-align: center;
 }
 
 .button-item {
+    height: 400px;
+    width: 90px;
     background-color: #e2e6ea;
     padding: 5px 10px;
     border-radius: 2px;
@@ -98,7 +156,10 @@ header > div.title > h1 > a:visited {
     flex-basis: calc(33.33% - 10px); 
     box-sizing: border-box;
     cursor: pointer;
+    
 }
+
+
 
 .button-item h4 {
     font-weight: bold;
@@ -203,4 +264,150 @@ header > div.title > h1 > a:visited {
 .button-item.highlight:hover {
   background-color: #ffe27a;
   border-color: #ffc107;
+}
+
+/* 슬롯머신 */
+
+.jackpot-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.slot {
+  width: 100px;
+  height: 100px;
+  border: 3px solid #333;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#spin-btn {
+  margin-top: 30px;
+  padding: 10px 30px;
+  font-size: 20px;
+  color: #fff;
+  background-color: #333;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#spin-btn:hover {
+  background-color: #555;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.jackpot-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+
+}
+
+nav {
+  text-align: left; /* Align content to the left */
+  padding: 10px 20px; /* Add some spacing around the nav */
+}
+
+#night_day {
+  background: linear-gradient(90deg, #8e44ad, #3498db); /* Purple-to-Blue gradient */
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+}
+
+#night_day:hover {
+  background: linear-gradient(90deg, #3498db, #8e44ad); /* Reversed gradient on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Night Mode Styles */
+body.night-mode a p {
+    color: black; /* Keep the <p> text inside <a> black in Night Mode */
+}
+
+/* General Night Mode Styles */
+body.night-mode {
+    background-color: black;
+    color: white;
+}
+
+body.night-mode a {
+    color: white; /* Keep links white in Night Mode */
+}
+
+/* Slots default styles */
+.slot {
+  height: 100px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: 3px solid #333; /* Border for slots */
+  border-radius: 10px;
+  margin: 0 10px;
+  background-color: white; /* Inside background always white */
+  color: black; /* Default text color for day mode */
+  transition: all 0.3s ease-in-out; /* Smooth transition for mode changes */
+}
+
+/* Night mode-specific slot styles */
+body.night-mode .slot {
+  border: 3px solid white; /* White border for contrast in night mode */
+  color: black; /* Text color stays black to contrast the white background */
+}
+
+/* Button styles */
+#spin-btn {
+  background-color: #333; /* Default button background (day mode) */
+  color: white; /* Default button text color */
+  border: 2px solid #333; /* Default border color */
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+body.night-mode #spin-btn {
+  background-color: white; /* White button background for night mode */
+  color: black; /* Black text color for contrast */
+  border: 2px solid white; /* White border for night mode */
+}
+
+/* Result text styles */
+#result {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: black; /* Default result text color (day mode) */
+  transition: color 0.3s ease-in-out;
+}
+
+body.night-mode #result {
+  color: white; /* White result text for night mode */
 }
